@@ -1,0 +1,45 @@
+<template name = "login">
+  <!-- Modal -->
+  <div class="modal fade" id="login" role="dialog">
+   <div class="modal-dialog modal-md singinPopoupContainer">
+     <div class="modal-content">
+       <div class="modal-header">
+         <button type="button" class="close" data-dismiss="modal">&times;</button>
+         <h3 class="modal-title">Login To Your Account</h3>
+       </div>
+       <div class="modal-body">
+          <form class="login" id="login" enctype="multipart/form-data">
+             <div class="form-group input-group">
+                  <span class="input-group-addon">
+                    <i class="fa fa-user fa-lg" aria-hidden="true"></i>
+                  </span>
+                 <input type="text" id="username" name="username" class="form-control" placeholder="User Name" >
+             </div>
+             <div class="form-group input-group">
+               <span class="input-group-addon">
+                 <i class="fa fa-lock fa-lg" aria-hidden="true"></i>
+               </span>
+
+                 <input type="password" id="password" name="password" class="form-control" placeholder="Password" >
+             </div>
+             <div class="form-group">
+               <div class="row">
+                 <div class="col-xs-12">
+                   <button type="submit" name="submit" data-loading-text="<i class='icon-spinner icon-spin icon-large'></i> Logging In ..." class="btn btn-danger pull-right">LOG IN</button>
+
+                 </div>
+               </div>
+
+             </div>
+          </form>
+       </div>
+       <div class="modal-footer">
+         <p class="text-center">
+           Don't have an account? <a href="" data-toggle="modal" data-target="#signup" data-dismiss="modal">Sign up now</a>
+
+         </p>
+       </div>
+     </div>
+   </div>
+  </div>
+</template>

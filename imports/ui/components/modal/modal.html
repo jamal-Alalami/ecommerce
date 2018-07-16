@@ -1,0 +1,74 @@
+<template name = "modal">
+  <!-- Modal -->
+
+  <div class="modal fade modalCart" id="modalCart"  role="dialog">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Shopping Cart</h4>
+        </div>
+        <div class="modal-body">
+{{#if products}}
+{{#with products}}
+        <table id="cart" class="table table-condensed">
+      <thead>
+        <tr>
+          <th style="width:35%">Product</th>
+          <th style="width:15%">Price</th>
+          <th style="width:18%">Quantity</th>
+          <th style="width:22%" class="text-center">Subtotal</th>
+          <th style="width:10%"></th>
+        </tr>
+      </thead>
+
+    <tbody>
+    {{#each product}}
+      {{>cart}}
+
+      {{/each}}
+
+    </tbody>
+
+    <tfoot>
+      <tr class="visible-xs">
+        <td class="text-center"><strong>Total {{totalPrice}} JOD</strong></td>
+      </tr>
+      <tr>
+          <td></td>
+          <td colspan="2" class="hidden-xs"></td>
+          <td class="hidden-xs text-center"><strong>Total {{totalPrice}} JOD</strong></td>
+          <td></td>
+        </tr>
+    </tfoot>
+
+    </table>
+{{/with}}
+{{else}}
+    <div class="row">
+      <div class="col-sm-6 col-md-6 col-md-offset-3 col-sm-offset-3">
+        <h2>No Items In Cart</h2>
+      </div>
+    </div>
+{{/if}}
+        </div>
+        <div class="modal-footer">
+        {{#if products}}
+
+        <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-angle-left"></i> Continue Shopping</button>
+        {{#if currentUser}}
+        <button type="button" class="btn btn-danger check" data-toggle="modal" data-target="#payModal"> Continue Check Out <i class="fa fa-angle-right"></i></button>
+
+        {{else}}
+          <a href="#" data-toggle="modal" data-target="#signup">Chceck Out </a>
+
+        {{/if}}
+        {{else}}
+                  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+
+        {{/if}}
+        </div>
+      </div>
+    </div>
+  </div>
+</template>

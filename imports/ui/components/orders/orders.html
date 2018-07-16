@@ -1,0 +1,90 @@
+<template name = "orders">
+  <!-- Modal -->
+
+  <div class="modal fade orders" id="orders"  role="dialog"  style="z-index:9999999" >
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">My Orders</h4>
+        </div>
+        <div class="modal-body">
+          {{#if ordersList}}
+          {{#each ordersList}}
+
+        <table id="cart" class="table table-condensed">
+      <thead>
+        <tr>
+          <th style="width:35%">Product</th>
+          <th style="width:15%">Price</th>
+          <th style="width:18%">Quantity</th>
+          <th style="width:22%" class="text-center">Subtotal</th>
+          <th style="width:10%"></th>
+        </tr>
+      </thead>
+
+    <tbody>
+    {{#each cart}}
+
+        {{#with item}}
+
+        <tr>
+          <td data-th="Product">
+            <div class="row">
+              <div class="col-sm-4 hidden-xs"><img src="/{{imagePath}}" alt="..." class="img-responsive"/></div>
+              <div class="col-sm-8">
+              <h4 class="nomargin">{{title}}</h4>
+              <p>{{description}}</p>
+            </div>
+          </div>
+        </td>
+        <td data-th="Price">{{this.price}} JOD</td>
+
+        <td data-th="Quantity">
+
+        {{../qty}}
+
+        </td>
+        <td data-th="Subtotal" class="text-center">{{../price}} JOD</td>
+        <td class="actions" data-th="">
+        </td>
+        </tr>
+        {{/with}}
+
+      {{/each}}
+
+    </tbody>
+
+    <tfoot>
+      <tr class="visible-xs">
+        <td class="text-center"><strong>Total {{totalPrice}} JOD</strong></td>
+      </tr>
+      <tr>
+          <td>Don at {{careatedAt}}</td>
+          <td colspan="2" class="hidden-xs"></td>
+          <td class="hidden-xs text-center"><strong>Total {{totalPrice}} JOD</strong></td>
+          <td></td>
+        </tr>
+    </tfoot>
+
+    </table>
+{{/each}}
+{{else}}
+    <div class="row">
+      <div class="col-sm-6 col-md-6 col-md-offset-3 col-sm-offset-3">
+        <h2>No Items In Orders</h2>
+      </div>
+    </div>
+    {{/if}}
+
+        </div>
+        <div class="modal-footer">
+
+                  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+
+
+        </div>
+      </div>
+    </div>
+  </div>
+</template>

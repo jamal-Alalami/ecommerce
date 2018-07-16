@@ -1,0 +1,16 @@
+<template name = "myItems">
+    <div class="row">
+
+      {{#each products}}
+        {{> productCard }}
+      {{/each}}
+    </div>
+
+    {{#if currentUser}}
+      <!-- Trigger the modal with a button -->
+      <button type="button" class="add btn btn-primary" data-toggle="modal" data-target="#myModal">Add New Item</button>
+      <!-- Modal -->
+      {{> productModal}}
+    {{/if}}
+
+</template>

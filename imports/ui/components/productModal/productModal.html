@@ -1,0 +1,22 @@
+<template name="productModal">
+<div id="myModal" class="modal fade" role="dialog" style="z-index:9999999">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Add New Item</h4>
+      </div>
+      <div class="modal-body">
+        {{> addItem}}
+      </div>
+      <div class="modal-footer">
+        <button type="submit" form="addForm" class="add-item btn btn-default">Save</button>
+        <button type="button" class=" btn btn-default" data-dismiss="modal">close</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+</template>

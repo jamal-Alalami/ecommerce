@@ -1,0 +1,30 @@
+<template name = "cart">
+
+      {{#with item}}
+
+      <tr>
+        <td data-th="Product">
+          <div class="row">
+            <div class="col-sm-4 hidden-xs"><img src="/{{imagePath}}" alt="..." class="img-responsive"/></div>
+            <div class="col-sm-8">
+            <h4 class="nomargin">{{title}}</h4>
+            <p>{{description}}</p>
+          </div>
+        </div>
+      </td>
+      <td data-th="Price">{{this.price}} JOD</td>
+
+      <td data-th="Quantity">
+
+      <button class="btn btn-info btn-sm reduce"><i class="fa fa-minus"></i></button>
+      {{../qty}}
+      <button class="btn btn-info btn-sm increment"><i class="fa fa-plus"></i></button>
+
+      </td>
+      <td data-th="Subtotal" class="text-center">{{../price}} JOD</td>
+      <td class="actions" data-th="">
+        <button class="btn btn-danger btn-sm remove"><i class="fa fa-trash-o"></i></button>
+      </td>
+      </tr>
+      {{/with}}
+</template>

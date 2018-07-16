@@ -1,0 +1,17 @@
+<template name="override-atPwdForm">
+  <div class="at-pwd-form">
+    <form role="form" id="at-pwd-form" class="userform {{disabled}}" novalidate >
+      {{#each fields}}
+        {{> atInput}}
+      {{/each}}
+      {{#if showReCaptcha}}
+        {{> atReCaptcha}}
+      {{/if}}
+      {{#if showForgotPasswordLink}}
+        {{> atPwdLink}}
+      {{/if}}
+      {{> atPwdFormBtn}}
+
+    </form>
+  </div>
+</template>

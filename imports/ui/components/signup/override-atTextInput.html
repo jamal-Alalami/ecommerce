@@ -1,0 +1,30 @@
+<template name="override-atTextInput">
+  <div class="at-input {{#if isValidating}}validating{{/if}} {{#if hasError}}has-error{{/if}} {{#if hasSuccess}}has-success{{/if}} {{#if feedback}}has-feedback{{/if}}">
+    <div class="form-group input-group">
+        {{#if equal type 'email'}}
+         <span class="input-group-addon">
+           <i class="fa fa-envelope " aria-hidden="true"></i>
+         </span>
+         {{/if}}
+         {{#if equal type 'text'}}
+         <span class="input-group-addon">
+           <i class="fa fa-user fa-lg" aria-hidden="true"></i>
+         </span>
+         {{/if}}
+         {{#if equal type 'password'}}
+         <span class="input-group-addon">
+           <i class="fa fa-lock fa-lg" aria-hidden="true"></i>
+         </span>
+         {{/if}}
+
+
+    <input type="{{type}}" class="form-control" id="at-field-{{_id}}" name="at-field-{{_id}}" placeholder="{{placeholder}}" autocapitalize="none" autocorrect="off">
+  </div>
+    {{#if hasIcon}}
+        <span class="{{iconClass}}"></span>
+    {{/if}}
+    {{#if hasError}}
+      <span>{{errorText}}</span>
+    {{/if}}
+  </div>
+</template>

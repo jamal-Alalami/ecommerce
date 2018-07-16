@@ -1,0 +1,88 @@
+<template name = "stripes">
+  <div id="payModal" class="modal fade" role="dialog" style="z-index:999999999">
+    <div class="modal-dialog">
+
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close closepayment" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Payment</h4>
+        </div>
+        <div class="modal-body">
+          <h3>
+            Hi {{userName}} Your Total Price Is :
+            {{totalPrice}} JOD
+          </h3>
+          <div class="row">
+
+            <div class="panel-body">
+                  <form class="payment-form" id="payment-form">
+                      <div class="row">
+                          <div class="col-xs-12">
+                              <div class="form-group">
+                                  <label for="cardNumber">CARD NUMBER</label>
+                                  <input
+                                      type="tel"
+                                      class="form-control"
+                                      name="cardNumber"
+                                      placeholder="Valid Card Number"
+                                      autocomplete="cc-number"
+                                      required autofocus
+                                  />
+                              </div>
+                          </div>
+                      </div>
+                      <div class="row">
+                          <div class="col-xs-3 col-md-3">
+                              <div class="form-group">
+                                  <label for="cardExpiry"><span class="hidden-xs">EXPIRATION</span><span class="visible-xs-inline">EXP</span> DATE</label>
+                                  <input
+                                      type="tel"
+                                      class="form-control"
+                                      name="cardExpiryMM"
+                                      placeholder="MM"
+                                      autocomplete="cc-exp"
+                                      required
+                                  />
+                              </div>
+                          </div>
+                          <div class="col-xs-3 col-md-3">
+                              <div class="form-group">
+                                  <label for="cardExpiry"><span class="hidden-xs">EXPIRATION</span><span class="visible-xs-inline">EXP</span> DATE</label>
+                                  <input
+                                      type="tel"
+                                      class="form-control"
+                                      name="cardExpiryYY"
+                                      placeholder="YY"
+                                      autocomplete="cc-exp"
+                                      required
+                                  />
+                              </div>
+                          </div>
+                          <div class="col-xs-5 col-md-5 pull-right">
+                              <div class="form-group">
+                                  <label for="cardCVC">CV CODE</label>
+                                  <input
+                                      type="tel"
+                                      class="form-control"
+                                      name="cardCVC"
+                                      placeholder="CVC"
+                                      autocomplete="cc-csc"
+                                      required
+                                  />
+                              </div>
+                          </div>
+                      </div>
+                  </form>
+                </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="submit" form="payment-form" class="payment-form btn btn-danger pull-right">Pay {{totalPrice}} JOD</button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+</template>
